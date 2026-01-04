@@ -1,12 +1,30 @@
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
+const { exec } = require('child_process');
 require('dotenv').config();
 
 const gamesRouter = require('./routes/games');
+const db = require('./database');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+
+// Check if database has games, if not run setup
+db.get('SELECT COUNT(*) as count FROM games', (err, row) => {
+  if (err || !row || row.count === 0) {
+    console.log('Database is empty, initializing...');
+    exec('node server/setup.js', (error, stdout, stderr) => {
+      if (error) {
+        console.error('Error setting up database:', error);
+        return;
+      }
+      console.log('Database initialized successfully');
+    });
+  } else {
+    console.log(`Database has ${row.count} games`);
+  }
+});
 
 // Middleware
 app.use(cors());
