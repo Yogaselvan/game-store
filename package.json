@@ -4,7 +4,7 @@
   "description": "Game search web application for Eneba internship assignment",
   "main": "server/index.js",
   "scripts": {
-    "install-all": "npm install && cd client && npm install && cd ..",
+    "install-all": "npm install && cd client && npm install && cd .. && npm install serverless-http",
     "start": "npm run build && node server/index.js",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "server": "nodemon server/index.js",
@@ -20,7 +20,8 @@
     "cors": "^2.8.5",
     "sqlite3": "^5.1.7",
     "fuse.js": "^7.0.0",
-    "dotenv": "^16.3.1"
+    "dotenv": "^16.3.1",
+    "serverless-http": "^3.2.0"
   },
   "devDependencies": {
     "nodemon": "^3.0.2",
