@@ -236,14 +236,6 @@ function HomePage() {
     showNotificationMessage(`Currency changed to ${currency.name}`);
   };
 
-  const platforms = [
-    { id: 'all', name: 'All Platforms', count: games.length },
-    { id: 'steam', name: 'Steam', count: games.filter(g => g.platform_type?.toLowerCase() === 'steam').length },
-    { id: 'gog', name: 'GOG.com', count: games.filter(g => g.platform_type?.toLowerCase() === 'gog').length },
-    { id: 'xbox', name: 'Xbox Live', count: games.filter(g => g.platform?.toLowerCase().includes('xbox')).length },
-    { id: 'switch', name: 'Nintendo', count: games.filter(g => g.platform?.toLowerCase().includes('switch')).length },
-  ];
-
   return (
     <div className="App">
       <Header 
