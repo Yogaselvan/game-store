@@ -1,7 +1,14 @@
-build:
-  - npm run install-all
-  - npm run setup
-  - npm run build
-
-start:
-  - npm start
+services:
+  - type: web
+    name: game-store-api
+    runtime: node
+    buildCommand: npm install && node server/setup.js
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 5000
+    routes:
+      - path: /api
+        priority: 100

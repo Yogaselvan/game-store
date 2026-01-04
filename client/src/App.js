@@ -9,6 +9,7 @@ import Wishlist from './components/Wishlist';
 import GameDetail from './components/GameDetail';
 import NotFound from './components/NotFound';
 import { currencies } from './components/CurrencyDropdown';
+import API_BASE_URL from './config';
 
 // Game Detail Page Component
 function GameDetailPage() {
@@ -26,7 +27,7 @@ function GameDetailWrapper({ gameId }) {
 
   const fetchGames = useCallback(async () => {
     try {
-      const response = await axios.get('/api/list');
+      const response = await axios.get(`${API_BASE_URL}/list`);
       const gamesData = response.data.data || [];
       setGames(gamesData);
     } catch (err) {
@@ -136,8 +137,8 @@ function HomePage() {
       setError(null);
       
       const url = query 
-        ? `/api/list?search=${encodeURIComponent(query)}`
-        : '/api/list';
+        ? `${API_BASE_URL}/list?search=${encodeURIComponent(query)}`
+        : `${API_BASE_URL}/list`;
       
       const response = await axios.get(url);
       const gamesData = response.data.data || [];
