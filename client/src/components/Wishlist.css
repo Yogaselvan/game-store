@@ -1,0 +1,362 @@
+/* Wishlist Modal */
+.wishlist-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.wishlist-modal {
+  background: #4B2976;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 800px;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  animation: slideUp 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@keyframes slideUp {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Header */
+.wishlist-header {
+  padding: 24px 32px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wishlist-header h2 {
+  color: white;
+  font-size: 1.5rem;
+  margin: 0;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.close-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 8px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.close-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+/* Content */
+.wishlist-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0;
+}
+
+/* Empty Wishlist */
+.empty-wishlist {
+  padding: 64px 32px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.empty-wishlist svg {
+  color: rgba(255, 255, 255, 0.3);
+  margin-bottom: 16px;
+}
+
+.empty-wishlist h3 {
+  color: white;
+  font-size: 1.25rem;
+  margin: 16px 0 8px 0;
+  font-weight: 600;
+}
+
+.empty-wishlist p {
+  margin-bottom: 24px;
+  opacity: 0.8;
+}
+
+.browse-btn {
+  background: linear-gradient(135deg, #00d4aa 0%, #1e90ff 100%);
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.browse-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 212, 170, 0.3);
+}
+
+/* Wishlist Items */
+.wishlist-items {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.wishlist-item {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  gap: 16px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.wishlist-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.game-image-container {
+  position: relative;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.game-image {
+  width: 120px;
+  height: 80px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.wishlist-item:hover .game-image {
+  transform: scale(1.05);
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.game-image-container:hover .image-overlay {
+  opacity: 1;
+}
+
+.quick-add-btn {
+  background: #00d4aa;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.quick-add-btn:hover {
+  background: #00b896;
+  transform: translateY(-1px);
+}
+
+/* Game Info */
+.game-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.game-title {
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.game-platform {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.game-price-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 4px 0;
+}
+
+.current-price {
+  color: #00d4aa;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.original-price {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
+  text-decoration: line-through;
+}
+
+.discount-badge {
+  background: #dc2626;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* Item Actions */
+.item-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: auto;
+  align-items: center;
+}
+
+.add-to-cart-btn {
+  background: linear-gradient(135deg, #00d4aa 0%, #1e90ff 100%);
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+  font-size: 0.875rem;
+}
+
+.add-to-cart-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 212, 170, 0.3);
+}
+
+.remove-btn {
+  background: rgba(220, 38, 38, 0.2);
+  border: 1px solid rgba(220, 38, 38, 0.3);
+  border-radius: 8px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #dc2626;
+}
+
+.remove-btn:hover {
+  background: rgba(220, 38, 38, 0.3);
+  border-color: #dc2626;
+  color: white;
+}
+
+/* Footer */
+.wishlist-footer {
+  padding: 24px 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wishlist-summary {
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+}
+
+.continue-shopping-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 12px 24px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.continue-shopping-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .wishlist-modal {
+    width: 95%;
+    max-height: 90vh;
+  }
+  
+  .wishlist-header {
+    padding: 16px 20px;
+  }
+  
+  .wishlist-items {
+    padding: 12px;
+  }
+  
+  .wishlist-item {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .game-image-container {
+    align-self: center;
+  }
+  
+  .item-actions {
+    justify-content: center;
+  }
+  
+  .wishlist-footer {
+    padding: 16px 20px;
+    flex-direction: column;
+    gap: 16px;
+  }
+}

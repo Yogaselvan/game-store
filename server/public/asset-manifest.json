@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/static/css/main.90fb4f85.css",
+    "main.js": "/static/js/main.9712d3d4.js",
+    "static/media/eneba-logo-official.svg": "/static/media/eneba-logo-official.77de578d6dbc7a8d3fe87cab193518c5.svg",
+    "index.html": "/index.html",
+    "main.90fb4f85.css.map": "/static/css/main.90fb4f85.css.map",
+    "main.9712d3d4.js.map": "/static/js/main.9712d3d4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.90fb4f85.css",
+    "static/js/main.9712d3d4.js"
+  ]
+}

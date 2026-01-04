@@ -1,0 +1,7 @@
+build:
+  - npm run install-all
+  - npm run setup
+  - npm run build
+
+start:
+  - npm start
