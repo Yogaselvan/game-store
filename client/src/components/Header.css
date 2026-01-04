@@ -298,3 +298,86 @@
   color: rgba(255, 255, 255, 0.5);
   margin: 0 4px;
 }
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+  display: none;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 8px;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .header-container {
+    padding: 0 16px;
+  }
+  
+  .search-form {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-nav {
+    display: none;
+  }
+  
+  .search-form {
+    max-width: 300px;
+  }
+  
+  .lang-btn span {
+    display: none;
+  }
+  
+  .mobile-menu-btn {
+    display: block;
+  }
+}
+
+@media (max-width: 600px) {
+  .header-container {
+    flex-wrap: wrap;
+    padding: 0 12px;
+    gap: 12px;
+  }
+  
+  .search-form {
+    order: 3;
+    flex: 1 1 100%;
+    max-width: 100%;
+    margin-top: 8px;
+  }
+  
+  .eneba-logo svg {
+    height: 32px;
+  }
+  
+  .icon-btn {
+    padding: 8px;
+    font-size: 18px;
+  }
+  
+  .cart-count, .wishlist-count {
+    width: 16px;
+    height: 16px;
+    font-size: 10px;
+    top: 2px;
+    right: 2px;
+  }
+}
+
+@media (max-width: 400px) {
+  .header-container {
+    padding: 0 8px;
+  }
+  
+  .lang-btn, .currency-dropdown {
+    padding: 6px 8px;
+    font-size: 0.8rem;
+  }
+}
